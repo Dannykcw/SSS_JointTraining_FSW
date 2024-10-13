@@ -44,7 +44,7 @@ uint64_t getSysTime() {
 void systick_init() {
 	// Clock Ticks for 1 SysTick period
 	// (10Mhz) * (10ms) = 10^5 ticks
-	uint32_t clockTicks = 1000000;
+	uint32_t clockTicks = 100000;
 
 	// subtract 1 because SysTick is an (n-1) to 0 counter
 	// That's our reload value
