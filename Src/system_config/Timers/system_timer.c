@@ -63,7 +63,8 @@ void systick_init() {
 	systick_ctrl &= ~(SysTick_CTRL_CLKSOURCE_Msk << SysTick_CTRL_CLKSOURCE_Pos);	// systick_ctrl | 0b11
 
 	// Set necessary bits (or did we???)
-	systick_ctrl |= (1 << SysTick_CTRL_TICKINT_Pos);
+	systick_ctrl |= (1 << SysTick_CTRL_TICKINT_Pos)
+		| (1 << SysTick_CTRL_ENABLE_Pos);
 
 	SysTick->CTRL = systick_ctrl;
 }

@@ -47,10 +47,10 @@ void led_init() {
 void blinky() {
 	static int counter = 0;
 
-	if (counter++ > 1000) {
+	if (counter++ > 100) {
 		counter = 0;
 	}
-	if (counter > 900) {
+	if (counter > 90) {
 		led_hb(1);
 	} else {
 		led_hb(0);
