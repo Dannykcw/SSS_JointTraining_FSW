@@ -23,16 +23,18 @@ int main() {
 
 void my_main() {
 
-	bool pin_status;
+	bool pin_status = 0;
+	uint32_t delay = 4000000;
 	while (1) {
 		// Printing using printf like format
 		printMsg("Hello There!\r\n");
+//		printMsg("delay: %ul", delay);
 
 
 		// We can toggle some pins
 		gpio_set(GPIOA, 15, pin_status);
 		led_d0(pin_status);
 		pin_status = !pin_status;
-		nop(10000000);
+		nop(delay);
 	}
 }
