@@ -104,4 +104,47 @@ void SysTick_Handler() {
 //
 //	if(led_num > 4) { led_hb(1) }
 //	else { led_hb(0); }
+	static int led_num = 0;
+	led_num = systick_time / 4;
+	switch (led_num) {
+	case 0:
+		led_d0(1);
+		led_d1(0);
+		led_d2(0);
+		led_d3(0);
+		led_hb(0);
+		break;
+	case 1:
+		led_d1(1);
+		led_d0(0);
+		led_d2(0);
+		led_d3(0);
+		led_hb(0);
+		break;
+	case 2:
+		led_d2(1);
+		led_d0(0);
+		led_d1(0);
+		led_d3(0);
+		led_hb(0);
+		break;
+	case 3:
+		led_d3(1);
+		led_d0(0);
+		led_d1(0);
+		led_d2(0);
+		led_hb(0);
+		break;
+	case 4:
+		led_hb(1);
+		led_d0(0);
+		led_d1(0);
+		led_d2(0);
+		led_d3(0);
+		break;
+	default:
+		systick_time = 0;
+		break;
+	}
+
 }
