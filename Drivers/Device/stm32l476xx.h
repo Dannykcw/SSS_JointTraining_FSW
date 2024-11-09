@@ -900,7 +900,7 @@ typedef struct
   __IO uint32_t EGR;         /*!< TIM event generation register,            Address offset: 0x14 */
   __IO uint32_t CCMR1;       /*!< TIM capture/compare mode register 1,      Address offset: 0x18 */
   __IO uint32_t CCMR2;       /*!< TIM capture/compare mode register 2,      Address offset: 0x1C */
-  __IO uint32_t CCER;        /*!< TIM capture/compare enable register,      Address offset: 0x20 */
+  __IO uint32_t CHER;        /*!< TIM capture/compare enable register,      Address offset: 0x20 */
   __IO uint32_t CNT;         /*!< TIM counter register,                     Address offset: 0x24 */
   __IO uint32_t PSC;         /*!< TIM prescaler,                            Address offset: 0x28 */
   __IO uint32_t ARR;         /*!< TIM auto-reload register,                 Address offset: 0x2C */
