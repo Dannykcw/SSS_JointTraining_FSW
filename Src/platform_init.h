@@ -54,7 +54,6 @@ void init_first_time() {
     //TODO: set first_time flag to on.
 }
 
-
 /**
  * Configures the system's various features,
  * such as clocks, protocol hardware, and more.
@@ -65,6 +64,7 @@ void init_first_time() {
  */
 void init_platform() {
 	imu_init(IMU_ODR_3333_Hz, IMU_FS_2_g, IMU_ODR_3333_Hz, IMU_FS_1000_dps);
+    SCB->CPACR|= 0x00F00000; // Enable the Floating-Point Unit for full access
     //TODO: hdd_init().
     //TODO: initialize intercomm.
     //TODO: fetch flash header.
@@ -77,8 +77,8 @@ void init_platform() {
 	buttons_init();
 	printer_init();
 	systick_init();
-    // pwm_init_timer_gpio();
-    // pwm_InitTimer(20, 50.0);
+    pwm_init_timer_gpio();
+    pwm_InitTimer(1600, 11.0);
 }
 
 #endif // REALOP1_PLATFORM_INIT_H
