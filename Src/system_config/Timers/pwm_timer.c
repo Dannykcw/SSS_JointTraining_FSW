@@ -46,7 +46,7 @@ void pwm_init_timer_gpio() {
 /// @brief Initialize the Pwm timer. For more detail on dutyCycle setting, see pwm_setDutyCycle
 /// @param ms period of the wave form in microseconds (μs)
 /// @return
-bool pwm_InitTimer(uint32_t ms, float dutyCycle) {
+bool pwm_InitTimer(uint32_t ms) {
     // Enable Timer
     RCC->APB1ENR1 |= RCC_APB1ENR1_TIM2EN;
     // * Initialize all registers
@@ -75,7 +75,7 @@ bool pwm_InitTimer(uint32_t ms, float dutyCycle) {
     TIM2->ARR |= (uint32_t) (ms - 1); // Write to entire register
     // ------------------- //
     // * Set the dutycycle
-    pwm_setDutyCycle(dutyCycle);
+    
     // ------------------- //
     // * Set the preload bit
     TIM2->CCMR1 |= TIM_CCMR1_OC1PE; // Set Bit 3
