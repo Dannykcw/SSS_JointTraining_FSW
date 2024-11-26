@@ -77,8 +77,8 @@ void init_platform() {
 	buttons_init();
 	printer_init();
 	systick_init();
-    pwm_init_timer_gpio();
-    pwm_InitTimer(1600, 11.0);
+    pwm_initTimer(10000);
+    pwm_setDutyCycle(10);
 }
 
 #endif // REALOP1_PLATFORM_INIT_H

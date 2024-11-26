@@ -15,7 +15,7 @@
 void pwm_doSomething();
 
 void pwm_init_timer_gpio();
-bool pwm_InitTimer(uint32_t ms, float dutyCycle);
+bool pwm_initTimer(uint32_t ms);
 void pwm_setDutyCycle(float dutyCycle);
 
 void testerFunction_PWMGeneration();
